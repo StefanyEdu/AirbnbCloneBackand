@@ -19,6 +19,16 @@ public class Usuario {
 		
 	}
 	
+	
+	
+	public Usuario(String nome, String email, String cpf) {
+		super();
+		this.nome = nome;
+		this.email = email;
+		this.cpf = cpf;
+	}
+
+
 	public Long getId() {
 		return this.id;
 	}
@@ -34,6 +44,11 @@ public class Usuario {
 		this.nome = nome;
 	}
 	
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + "]";
+	}
+
 	public String getEmail() {
 		return this.email;
 	}

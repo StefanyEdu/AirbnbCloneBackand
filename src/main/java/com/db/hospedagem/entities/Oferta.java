@@ -18,6 +18,22 @@ public class Oferta {
 public Oferta() {
 		
 	}
+	
+
+	public Oferta(String imovel, String preco, String disponibilidade) {
+	super();
+	this.imovel = imovel;
+	this.preco = preco;
+	this.disponibilidade = disponibilidade;
+}
+
+
+	@Override
+public String toString() {
+	return "Oferta [id=" + id + ", imovel=" + imovel + ", preco=" + preco + ", disponibilidade=" + disponibilidade
+			+ "]";
+}
+
 
 	public Long getId() {
 		return this.id;
