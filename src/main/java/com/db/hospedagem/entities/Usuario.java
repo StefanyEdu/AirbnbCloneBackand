@@ -14,6 +14,7 @@ public class Usuario {
 	private String nome;
 	private String email;
 	private String cpf;
+	private String telefone;
 	
 	public Usuario() {
 		
@@ -21,11 +22,12 @@ public class Usuario {
 	
 	
 	
-	public Usuario(String nome, String email, String cpf) {
+	public Usuario(String nome, String email, String cpf, String telefone) {
 		super();
 		this.nome = nome;
 		this.email = email;
 		this.cpf = cpf;
+		this.telefone = telefone;
 	}
 
 
@@ -46,7 +48,7 @@ public class Usuario {
 	
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + "]";
+		return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", telefone=" + telefone + "]";
 	}
 
 	public String getEmail() {
@@ -63,6 +65,14 @@ public class Usuario {
 	
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	
+	public String getTelefone() {
+		return this.telefone;
+	}
+	
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 }
