@@ -23,10 +23,10 @@ public class OfertaController {
 		return this.repository.findByCidade(cidade);
     }
 	
-//	@GetMapping("/imovel/{imovel}")
-//	public Optional<Oferta> getOferta(@PathVariable String imovel) {
-//		return Optional.of(repository.findByImovel(imovel).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Imóvel não encontrado")));
-//	}
+	@GetMapping("/imovel/{imovel}")
+	public Optional<Oferta> getOferta(@PathVariable String imovel) {
+		return Optional.of(repository.findByImovel(imovel).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Imóvel não encontrado")));
+	}
 	
 	@GetMapping("/imoveis")
 	public List<Oferta> all() {
