@@ -1,31 +1,49 @@
 package com.db.hospedagem;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
-	
-@Entity(name="oferta")
+/*
+ * *
+ * @author Danieli Tessaro
+ * @author Stefany Eduarda
+ */
+
+// Iniciando a Entidade
+@Entity
 public class Oferta {
-		
+	 private ArrayList<String> list = new ArrayList<>();
+	 
+
+	// Criação dos atributos
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String imovel;
-	private Double preco;
+	private String preco;
 	private String disponibilidade;
-	private Integer diarias;
+	private String diarias;
 	private String cidade;
 	private String uf;
-	private Integer quantQuartos;
-	
-	
-	public Oferta() {
-		
-	}
-	
+	private String quantQuartos;
 
-	public Oferta(String imovel, Double preco, String disponibilidade, Integer diarias, String cidade, String uf, Integer quantQuartos) {
+	// metodo vazio
+	public Oferta() {
+	}
+
+   // metodo toString
+	@Override
+	public String toString() {
+		return "Oferta [id=" + id + ", imovel=" + imovel + ", preco=" + preco + ", disponibilidade=" + disponibilidade
+				+ ", diarias=" + diarias + ", cidade=" + cidade + ", uf=" + uf + ", quantQuartos=" + quantQuartos + "]";
+	}
+    
+	//Constrtutor 
+	public Oferta(String imovel, String preco, String disponibilidade, String diarias, String cidade, String uf,
+			String quantQuartos) {
 		super();
 		this.imovel = imovel;
 		this.preco = preco;
@@ -35,78 +53,73 @@ public class Oferta {
 		this.uf = uf;
 		this.quantQuartos = quantQuartos;
 	}
-
-
-	@Override
-	public String toString() {
-		return "Oferta [id=" + id + ", imovel=" + imovel + ", preco=" + preco + ", disponibilidade=" + disponibilidade
-				+ ", diarias=" + diarias + ", cidade=" + cidade + ", uf=" + uf + ", quantQuartos=" + quantQuartos + "]";
-	}
-
+	
+	//Iniciando set e get
 
 	public Long getId() {
-		return this.id;
+		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getImovel() {
-		return this.imovel;
+		return imovel;
 	}
-	
+
 	public void setImovel(String imovel) {
 		this.imovel = imovel;
 	}
-	
-	public Double getPreco() {
-		return this.preco;
+
+	public String getPreco() {
+		return preco;
 	}
-	
-	public void setPreco(Double preco) {
+
+	public void setPreco(String preco) {
 		this.preco = preco;
 	}
-	
+
 	public String getDisponibilidade() {
-		return this.disponibilidade;
+		return disponibilidade;
 	}
-	
+
 	public void setDisponibilidade(String disponibilidade) {
 		this.disponibilidade = disponibilidade;
 	}
-	
-	public int getDiarias() {
-		return this.diarias;
+
+	public String getDiarias() {
+		return diarias;
 	}
-	
-	public void setDiarias(Integer diarias) {
+
+	public void setDiarias(String diarias) {
 		this.diarias = diarias;
 	}
+
 	public String getCidade() {
-		return this.cidade;
+		return cidade;
 	}
-	
+
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+
 	public String getUf() {
-		return this.uf;
+		return uf;
 	}
-	
+
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
-	
-	public int getQuantQuartos() {
-		return this.quantQuartos;
+
+	public String getQuantQuartos() {
+		return quantQuartos;
 	}
-	
-	public void setQuantQuartos(Integer quantQuartos) {
+
+	public void setQuantQuartos(String quantQuartos) {
 		this.quantQuartos = quantQuartos;
 	}
 	
-	public Double getValorTotal() {
-		return this.diarias * this.preco.doubleValue();
-	}
-
+    
+ 
 }

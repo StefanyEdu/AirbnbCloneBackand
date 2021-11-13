@@ -4,10 +4,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-@Entity(name="usuario")
+/*
+*
+* *
+* @author Danieli Tessaro
+* @author Stefany Eduarda
+*/
+// INICIANDO A ENTIDADE
+@Entity
 public class Usuario {
 	
+	//CRIAÇÃO DOS ATRIBUTOS 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
@@ -20,14 +27,7 @@ public class Usuario {
 		
 	}
 	
-	
-	
-	
-	
-	
-
-
-
+	//CONSTRUTUTOR
 	public Usuario(String nome, String email, String cpf, String telefone) {
 		super();
 		this.nome = nome;
@@ -36,21 +36,10 @@ public class Usuario {
 		this.telefone = telefone;
 	}
 
-
-
-
-
-
-
-
-
+    // INICIANDO SET E GET
 	public Long getId() {
 		return id;
 	}
-
-
-
-
 
 
 
@@ -58,19 +47,9 @@ public class Usuario {
 		this.id = id;
 	}
 
-
-
-
-
-
-
 	public String getNome() {
 		return nome;
 	}
-
-
-
-
 
 
 
@@ -79,17 +58,9 @@ public class Usuario {
 	}
 
 
-
-
-
-
-
 	public String getEmail() {
 		return email;
 	}
-
-
-
 
 
 
@@ -100,16 +71,9 @@ public class Usuario {
 
 
 
-
-
-
-
 	public String getCpf() {
 		return cpf;
 	}
-
-
-
 
 
 
@@ -130,10 +94,6 @@ public class Usuario {
 
 
 
-
-
-
-
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
@@ -143,7 +103,7 @@ public class Usuario {
 
 
 
-
+    // METODO TO STRING
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", telefone=" + telefone
@@ -162,3 +122,4 @@ public class Usuario {
 	}
 
 }
+
