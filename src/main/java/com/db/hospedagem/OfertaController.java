@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(exposedHeaders = "errors, content-type")
-@RequestMapping("/hospedagem/")
+@RequestMapping("/hospedagem")
 public class OfertaController {
 
 	@Autowired
@@ -28,16 +28,13 @@ public class OfertaController {
 	
 	
 	// INICIANDO CHAMADA DE DADOS
-	@RequestMapping(value = "oferta", method = RequestMethod.POST, produces = "application/json")
-    public Oferta postQuarto(@RequestParam("cidade") String cidade) {
-		Oferta of = new Oferta();
-		of.setCidade(cidade);
-		repository.save(of);
-		repository.findAll();
-		return of;
+	@RequestMapping(value = "/{cidade}", method = RequestMethod.GET, produces = "application/json")
+    public List<Oferta> getCidades(@RequestParam("cidade") String cidade) {
+	    List<Oferta> ofertas = this.repository.findAllByCidade(cidade); 
+		return ofertas;
     }
 	
-	@GetMapping("imoveis")
+	@GetMapping("")
 	public List<Oferta> all() {
 		return (List<Oferta>) repository.findAll();
 	}

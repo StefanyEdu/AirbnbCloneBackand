@@ -22,6 +22,6 @@ public interface OfertaRepository extends CrudRepository<Oferta, String> {
         Oferta findByPreco(String preco);
         Oferta findByDisponibilidade(String disponibilidade);
         Oferta findByDiarias(String diarias);
-       
+        List<Oferta>findAllByCidade(String cidade);
         
 	}

@@ -105,9 +105,7 @@ public class OfertaService implements OfertaRepository {
 
 	@Override
 	public Oferta findByCidade(String cidade) {
-		Oferta of = null;
-		of=repository.findByCidade(cidade);
-		return null;
+		return repository.findByCidade(cidade);
 	}
 
 	@Override
@@ -132,6 +130,11 @@ public class OfertaService implements OfertaRepository {
 	public Oferta findByDiarias(String diarias) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Oferta> findAllByCidade(String cidade) {
+		return repository.findAllByCidade(cidade);
 	}
 
 }

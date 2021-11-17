@@ -13,10 +13,26 @@ public class AirbnbCloneApplication {
 	}
 
 	@Bean
-	public CommandLineRunner com(UsuarioRepository repository) {
+	public CommandLineRunner com(OfertaRepository ofertarepository) {
 		return (args)->{
-			repository.save(new Usuario());
+			
+			//DADOS DE PORTO ALEGRE
+			ofertarepository.save(new Oferta("Apartamento", "100.00", "Dezembro e Janeiro","100.00",
+					"Porto Alegre","Rio Grande do Sul","2"));
+				
+			ofertarepository.save(new Oferta("Casa", "150.00", "Dezembro e Janeiro","100.00",
+					"Porto Alegre","Rio Grande do Sul","1"));
+			ofertarepository.save(new Oferta("Apartamento", "100.00", "Dezembro a Fevereiro","100.00",
+					"Porto Alegre","Rio Grande do Sul","3"));
+			
+			//Dados de Florianopolis 
+			ofertarepository.save(new Oferta("Apartamento", "110.00", "Dezembro a Janeiro","100.00",
+					"Florianopolis","Santa Catarina","2"));
+			ofertarepository.save(new Oferta("Casa", "100.00", "Dezembro a Fevereiro","100.00",
+					"Florianopolis","Santa Catarina","1"));
+			
 		};
+		
 		
 	}
 }
